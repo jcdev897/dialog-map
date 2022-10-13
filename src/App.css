@@ -17,3 +17,50 @@
   height: 90%;
   max-height: none!important;
 }
+.nav-tabs button.nav-link {
+  color: #888888;
+}
+.nav-tabs button.nav-link.active {
+  color: #1E2329;
+  font-weight: 600;
+  line-height: 17px;
+}
+
+.nav-tabs button.nav-link:hover, .above-tab.nav-link.active {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom: 2px solid #0096FF;
+  border-left-color: transparent;
+  line-height: inherit !important;
+}
+
+.breadcrumb-item.default-color {
+  color: #1E2329;
+}
+
+.breadcrumb-item.default-color a {
+  color: #1E2329;
+  text-decoration: none;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content:var(--bs-breadcrumb-divider,">>") !important ;
+  color:#0096FF;
+}
+
+.tab-content {
+  min-height: 1000px;
+}
+/* custom font */
+.fs-18 {
+  font-size: 18px;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.default-color {
+  color: #1E2329;
+}
+/* end custom font */

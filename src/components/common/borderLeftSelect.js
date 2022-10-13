@@ -14,7 +14,7 @@ function BorderLeftSelect(props) {
     <option value={val} key={val}>{val}</option>
   );
   return (
-    <Form.Select className='text-uppercase fw-bold mt-3 border-left fs-14' value={selectedVal} onChange={handleSelectChange}>
+    <Form.Select {...props.register} className='text-uppercase fw-bold mt-3 border-left fs-14' value={selectedVal} onChange={handleSelectChange}>
       {optionItems}
     </Form.Select>
   )

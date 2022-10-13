@@ -1,10 +1,24 @@
 import { useState } from 'react';
 import { Breadcrumb, Button, Container, Modal, Tab, Tabs } from 'react-bootstrap';
+import * as Icon from 'react-bootstrap-icons';
 import Frame149 from './components/Frame_149';
 import './App.css';
 
 function App() {
   const [show, setShow] = useState(false);
+
+  const gridIcon = (
+            <div className='fs-14'>
+              <Icon.Grid/>
+              <span className='mx-1'>Dashboard</span>
+            </div>
+          );
+  const chartIcon = (
+            <div className='fs-14'>
+              <Icon.BarChart/>
+              <span className='mx-1'>Charts</span>
+            </div>
+          );
 
   return (
     <div className="App">
@@ -19,20 +33,24 @@ function App() {
           dialogClassName="modal-90wh"
           aria-labelledby="ia-node-data-mapping"
         >
-          <Modal.Header closeButton>
+          <Modal.Header closeButton className='pb-0'>
             <Modal.Title id="ia-node-data-mapping">
               <Breadcrumb>
-                <Breadcrumb.Item href="#">Inventory Allocation</Breadcrumb.Item>
-                <Breadcrumb.Item active>Visualization</Breadcrumb.Item>
+                <Breadcrumb.Item className='fs-18 fw-600 default-color'>Inventory Allocation</Breadcrumb.Item>
+                <Breadcrumb.Item className='fs-18 fw-600 default-color' active>Visualization</Breadcrumb.Item>
               </Breadcrumb>
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className='px-0'>
             <Tabs
               defaultActiveKey="dashboard"
             >
-              <Tab eventKey="charts" title="Charts"></Tab>
-              <Tab eventKey="dashboard" title="Dashboard">
+              <Tab tabClassName='charts-tab above-tab' eventKey="charts" title={chartIcon}>
+                <div className='d-flex'>
+
+                </div>
+              </Tab>
+              <Tab tabClassName="dashboard-tab above-tab" eventKey="dashboard" title={gridIcon}>
                 <div className='d-flex'>
                   <Frame149 />
                 </div>

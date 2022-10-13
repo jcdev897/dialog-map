@@ -15,6 +15,7 @@ function EnableCheckbox(props) {
       <Form.Check
         className='point-label'
         type="switch"
+        {...props.register}
       />
     </div>
   )

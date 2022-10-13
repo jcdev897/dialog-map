@@ -14,7 +14,7 @@ function LineWidth(props) {
       <p className="text-uppercase fw-bold mt-3 sub-title">Line Width (Pixels)</p>
         <div className='row'>
           <div className='col-sm-4'>
-            <Form.Control type="number" value={widthVal} onChange={handleChangeWidth} />
+            <Form.Control type="number" value={widthVal} onChange={handleChangeWidth} {...props.register} />
           </div>
           <div className='col-sm-8'>
             <Form.Range
