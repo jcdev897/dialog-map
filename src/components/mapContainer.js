@@ -39,10 +39,8 @@ function MapContainer() {
         source: 'map-data',
         id: 'circle',
         paint: {
-          'circle-radius': 6,
-          'circle-opacity': 1,
-          'circle-stroke-width': 5,
-          'circle-color': 'blue'
+          'circle-opacity': 0.8,
+          'circle-color': 'pink'
         },
         'filter': ['==', '$type', 'Point']
       });
