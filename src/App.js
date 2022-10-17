@@ -7,6 +7,10 @@ import MapContainer from './components/mapContainer';
 
 function App() {
   const [show, setShow] = useState(false);
+  const [lineWidth, setLineWidth] = useState(1);
+  const [lineColor, setLineColor] = useState('blue');
+  const [pointColor, setpointColor] = useState('pink');
+  const [pointRadius, setpointRadius] = useState(6);
 
   const gridIcon = (
             <div className='fs-14'>
@@ -53,8 +57,10 @@ function App() {
               </Tab>
               <Tab tabClassName="dashboard-tab above-tab" eventKey="dashboard" title={gridIcon}>
                 <div className='d-flex'>
-                  <Frame149 />
-                  <MapContainer />
+                  <Frame149 setLineWidth={setLineWidth} setLineColor={setLineColor} />
+                  <div className='flex-grow-1'>
+                    <MapContainer lineColor={lineColor} lineWidth={lineWidth} pointColor={pointColor} pointRadius={pointRadius} />
+                  </div>
                 </div>
               </Tab>
             </Tabs>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Col, Form, Row, Button } from 'react-bootstrap';
 import { GithubPicker } from 'react-color';
 import { useForm } from "react-hook-form";
@@ -6,14 +7,19 @@ import EnableCheckbox from './common/enableCheckbox';
 import LineWidth from './common/lineWidth';
 import './../scss/leftpanel.css';
 
-function Frame_149() {
+function Frame_149(props) {
   const colorPalettes = ["#004B80", "#0078CC", "#33ABFF", "#80CAFF", "#333380", "#8080B0"];
   const requiredCols = ['required columns', 'dd'];
   const customizeLines = ['customize line', 'dd'];
   const pointLabels = ['enable points label', 'ee'];
 
+  function handleChangeLineColor(color, event) {
+    props.setLineColor(color.hex);
+  }
   const { register, handleSubmit, watch } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => ({
+
+  });
   
   const refs = [
     "dataset",
@@ -30,7 +36,7 @@ function Frame_149() {
     "point-label",
     "point-label-status"
   ];
-  console.log(refs.map(ref => watch(ref)));
+  // console.log(refs.map(ref => watch(ref)));
 
   return (
     <div className="bg-gray left-panel">
@@ -112,13 +118,14 @@ function Frame_149() {
           colors={colorPalettes}
           triangle='hide'
           width='300'
+          onChangeComplete={handleChangeLineColor}
         />
         <p className="text-uppercase fw-bold mt-3 sub-title">Color Based On</p>
         <Form.Select {...register("color-based")}>
           <option>Route ID</option>
           <option>Route ID 1</option>
         </Form.Select>
-        <LineWidth register={register("line-width")} />
+        <LineWidth register={register("line-width")} setLineWidthVal={props.setLineWidthVal} />
         <BorderLeftSelect register={register("point-label")} values={pointLabels}/>
         <EnableCheckbox register={register('point-label-status')} />
       </Form>

@@ -91,8 +91,85 @@
     },
     {
       "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [-73.754968, 42.6511674],
+          [-85.759407, 38.2542376]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [-122.674194, 45.5202471],
+          [-117.15529, 32.72793]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [-122.674194, 45.5202471],
+          [-117.1627728, 32.7174202]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [-122.674194, 45.5202471],
+          [-115.148516, 36.1672559]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [-80.19362, 25.7741728],
+          [-81.655651, 30.3321838]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [-80.19362, 25.7741728],
+          [-84.414581, 33.769805]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [-80.19362, 25.7741728],
+          [-80.2440518, 36.0998131]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
       "properties": {
-
+        "title": "Supplier 1"
       },
       "geometry": {
         "coordinates": [-95.9383758, 41.2587459],
@@ -102,6 +179,7 @@
     {
       "type": "Feature",
       "properties": {
+        "title": "Plant 1"
       },
       "geometry": {
         "coordinates": [-104.984862, 39.7392364],
@@ -111,6 +189,7 @@
     {
       "type": "Feature",
       "properties": {
+        "title": "Supplier 2"
       },
       "geometry": {
         "coordinates": [-95.3676974, 29.7589382],
@@ -120,6 +199,7 @@
     {
       "type": "Feature",
       "properties": {
+        "title": "Supplier 3"
       },
       "geometry": {
         "coordinates": [-117.1627728, 32.7174202],
@@ -129,6 +209,7 @@
     {
       "type": "Feature",
       "properties": {
+        "title": "Whse 1"
       },
       "geometry": {
         "coordinates": [-80.19362, 25.7741728],
@@ -138,6 +219,7 @@
     {
       "type": "Feature",
       "properties": {
+        "title": "Whse 2"
       },
       "geometry": {
         "coordinates": [-73.754968, 42.6511674],
@@ -147,9 +229,100 @@
     {
       "type": "Feature",
       "properties": {
+        "title": "Whse 3"
       },
       "geometry": {
         "coordinates": [-122.674194, 45.5202471],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cust 1"
+      },
+      "geometry": {
+        "coordinates": [-75.11623056, 40.1507046],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cust 2"
+      },
+      "geometry": {
+        "coordinates": [-80.011878, 40.6958342],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cust 3"
+      },
+      "geometry": {
+        "coordinates": [-85.759407, 38.2542376],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cust 5"
+      },
+      "geometry": {
+        "coordinates": [-117.15529, 32.72793],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cust 6"
+      },
+      "geometry": {
+        "coordinates": [-117.1627728, 32.7174202],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cust 7"
+      },
+      "geometry": {
+        "coordinates": [-115.148516, 36.1672559],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cust 8"
+      },
+      "geometry": {
+        "coordinates": [-81.655651, 30.3321838],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cust 9"
+      },
+      "geometry": {
+        "coordinates": [-84.414581, 33.769805],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cust 10"
+      },
+      "geometry": {
+        "coordinates": [-80.2440518, 36.0998131],
         "type": "Point"
       }
     }

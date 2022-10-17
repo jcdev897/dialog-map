@@ -7,6 +7,7 @@ function LineWidth(props) {
 
   function handleChangeWidth(event) {
     setWidthVal(event.target.value);
+    props.setLineWidthVal(event.target.value);
   }
 
   return (
