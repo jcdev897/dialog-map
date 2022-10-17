@@ -3,6 +3,7 @@ import { Breadcrumb, Button, Container, Modal, Tab, Tabs } from 'react-bootstrap
 import * as Icon from 'react-bootstrap-icons';
 import Frame149 from './components/Frame_149';
 import './App.css';
+import MapContainer from './components/mapContainer';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -53,6 +54,7 @@ function App() {
               <Tab tabClassName="dashboard-tab above-tab" eventKey="dashboard" title={gridIcon}>
                 <div className='d-flex'>
                   <Frame149 />
+                  <MapContainer />
                 </div>
               </Tab>
             </Tabs>
