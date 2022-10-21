@@ -7,7 +7,7 @@ import MapContainer from './components/mapContainer';
 
 function App() {
   const [show, setShow] = useState(false);
-  const [lineWidth, setLineWidth] = useState(1);
+  const [lineWidth, setLineWidth] = useState(2);
   const [lineColor, setLineColor] = useState('blue');
   const [pointColor, setpointColor] = useState('pink');
   const [pointRadius, setpointRadius] = useState(6);

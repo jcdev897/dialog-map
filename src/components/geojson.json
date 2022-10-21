@@ -3,7 +3,10 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Omaha, Nebraska",
+        "destId": "Denver, CO"
+      },
       "geometry": {
         "coordinates": [
           [-95.9383758, 41.2587459],
@@ -14,7 +17,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Houston, TX",
+        "destId": "Denver, CO"
+      },
       "geometry": {
         "coordinates": [
           [-95.3676974, 29.7589382],
@@ -25,7 +31,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "San Diego, CA",
+        "destId": "Denver, CO"
+      },
       "geometry": {
         "coordinates": [
           [-117.1627728, 32.7174202],
@@ -36,7 +45,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Denver, CO",
+        "destId": "Miami, FL"
+      },
       "geometry": {
         "coordinates": [
           [-104.984862, 39.7392364],
@@ -47,7 +59,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Denver, CO",
+        "destId": "Albany, NY"
+      },
       "geometry": {
         "coordinates": [
           [-104.984862, 39.7392364],
@@ -58,7 +73,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Denver, CO",
+        "destId": "Portland, OR"
+      },
       "geometry": {
         "coordinates": [
           [-104.984862, 39.7392364],
@@ -69,7 +87,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Albany, NY",
+        "destId": "Willow Grove, PA"
+      },
       "geometry": {
         "coordinates": [
           [-73.754968, 42.6511674],
@@ -80,7 +101,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Albany, NY",
+        "destId": "Mars, PA"
+      },
       "geometry": {
         "coordinates": [
           [-73.754968, 42.6511674],
@@ -91,7 +115,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Albany, NY",
+        "destId": "Louisville, KY"
+      },
       "geometry": {
         "coordinates": [
           [-73.754968, 42.6511674],
@@ -102,7 +129,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Portland, OR",
+        "destId": "San Fransico, CA"
+      },
       "geometry": {
         "coordinates": [
           [-122.674194, 45.5202471],
@@ -113,7 +143,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Portland, OR",
+        "destId": "San Diego, CA"
+      },
       "geometry": {
         "coordinates": [
           [-122.674194, 45.5202471],
@@ -124,7 +157,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Portland, OR",
+        "destId": "Las Vegas, NV"
+      },
       "geometry": {
         "coordinates": [
           [-122.674194, 45.5202471],
@@ -135,7 +171,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Miami, FL",
+        "destId": "Jacksonville, FL"
+      },
       "geometry": {
         "coordinates": [
           [-80.19362, 25.7741728],
@@ -146,7 +185,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Miami, FL",
+        "destId": "Atlanta GA"
+      },
       "geometry": {
         "coordinates": [
           [-80.19362, 25.7741728],
@@ -157,7 +199,10 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "originId": "Miami, FL",
+        "destId": "Winston Salem, NC"
+      },
       "geometry": {
         "coordinates": [
           [-80.19362, 25.7741728],

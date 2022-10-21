@@ -3,3 +3,19 @@
   height: 100%;
   padding: 20px;
 }
+
+.popup-box { 
+  position: absolute;
+  background-color: white;
+  color: black;
+  z-index: 9999;
+}
+
+.popup-title {
+  color: #0096FF;
+  font-size: 14px;
+}
+
+.popup-box label {
+  color: gray;
+}
