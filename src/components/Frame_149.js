@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { Col, Form, Row, Button } from 'react-bootstrap';
 import { GithubPicker } from 'react-color';
 import { useForm } from "react-hook-form";
@@ -7,7 +8,9 @@ import EnableCheckbox from './common/enableCheckbox';
 import LineWidth from './common/lineWidth';
 import './../scss/leftpanel.css';
 
+const base_url = 'http://127.0.0.1:4000';
 function Frame_149(props) {
+  const [dataSets, setDataSets] = useState([]);
   const colorPalettes = ["#004B80", "#0078CC", "#33ABFF", "#80CAFF", "#333380", "#8080B0"];
   const requiredCols = ['required columns', 'dd'];
   const customizeLines = ['customize line', 'dd'];
@@ -16,6 +19,14 @@ function Frame_149(props) {
   function handleChangeLineColor(color, event) {
     props.setLineColor(color.hex);
   }
+
+  function handleDatasetChange(event) {
+    const datasetId = event.target.value;
+    axios.get(base_url + "/dataset/" + datasetId).then((res) => {
+      console.log(res.data);
+    });
+  }
+
   const { register, handleSubmit, watch } = useForm();
   const onSubmit = data => ({
 
@@ -36,8 +47,15 @@ function Frame_149(props) {
     "point-label",
     "point-label-status"
   ];
-  // console.log(refs.map(ref => watch(ref)));
+  const dataSetItems = dataSets.map((data, index) => 
+    <option key={index}>{data}</option>
+  );
 
+  useEffect(() => {
+    axios.get(base_url + "/datasets").then((res) => {
+      setDataSets(res.data);
+    });
+  });
   return (
     <div className="bg-gray left-panel">
       <Form onSubmit={handleSubmit(onSubmit)}>
@@ -48,8 +66,8 @@ function Frame_149(props) {
         <p className="text-uppercase fw-bold mt-3 sub-title">DataSet</p>
         <Form.Group>
           <Form.Label className='fw-bold text-secondary'>Select Dataset</Form.Label>
-          <Form.Select {...register("dataset")}>
-            <option>Origin_Destination_Matrix</option>
+          <Form.Select {...register("dataset")} onChange={handleDatasetChange}>
+            {dataSetItems}
           </Form.Select>
         </Form.Group>
         <p className="text-uppercase fw-bold mt-3 sub-title mt-3">Map Type</p>

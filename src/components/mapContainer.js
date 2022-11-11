@@ -54,10 +54,8 @@ function MapContainer(props) {
       point: {x, y}
     } = event;
     const hoveredFeature = features && features[0];
-    console.log(hoveredFeature)
     // prettier-ignore
     setHoverInfo(hoveredFeature && {feature: hoveredFeature, x, y});
-    console.log(x)
   }, []);
 
   return (
