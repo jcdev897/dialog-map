@@ -11,7 +11,11 @@ function App() {
   const [lineColor, setLineColor] = useState('blue');
   const [pointColor, setpointColor] = useState('pink');
   const [pointRadius, setpointRadius] = useState(6);
-
+  const [pointData, setPointData] = useState([]);
+  const [originLat, setOriginLat] = useState('');
+  const [originLong, setOriginLong] = useState('');
+  const [destLat, setDestLat] = useState('');
+  const [destLong, setDestLong] = useState('');
   const gridIcon = (
             <div className='fs-14'>
               <Icon.Grid/>
@@ -57,9 +61,27 @@ function App() {
               </Tab>
               <Tab tabClassName="dashboard-tab above-tab" eventKey="dashboard" title={gridIcon}>
                 <div className='d-flex'>
-                  <Frame149 setLineWidth={setLineWidth} setLineColor={setLineColor} />
+                  <Frame149
+                    setLineWidth={setLineWidth}
+                    setLineColor={setLineColor}
+                    setPointData={setPointData}
+                    setOriginLat = {setOriginLat}
+                    setOriginLong = {setOriginLong}
+                    setDestLat = {setDestLat}
+                    setDestLong = {setDestLong}
+                  />
                   <div className='flex-grow-1'>
-                    <MapContainer lineColor={lineColor} lineWidth={lineWidth} pointColor={pointColor} pointRadius={pointRadius} />
+                    <MapContainer
+                      lineColor={lineColor}
+                      lineWidth={lineWidth}
+                      pointColor={pointColor}
+                      pointRadius={pointRadius}
+                      pointData={pointData}
+                      originLat={originLat}
+                      originLong={originLong}
+                      destLat={destLat}
+                      destLong={destLong}
+                    />
                   </div>
                 </div>
               </Tab>

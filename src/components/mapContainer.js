@@ -15,6 +15,58 @@ function MapContainer(props) {
     zoom: 3,
     attributionControl: false
   });
+  
+  const featureData = [];
+
+  props.pointData.map((data, index) => {
+    const originLat = data[props.originLat];
+    const originLong = data[props.originLong];
+    const destLat = data[props.destLat];
+    const destLong = data[props.destLong];
+    const pointOrigin = {
+      "type": "Feature",
+      "properties": {
+        "title": data.origin_name
+      },
+      "geometry": {
+        "coordinates": [originLong, originLat],
+        "type": "Point"
+      }
+    };
+    const pointDest = {
+      "type": "Feature",
+      "properties": {
+        "title": data.dest_name
+      },
+      "geometry": {
+        "coordinates": [destLong, destLat],
+        "type": "Point"
+      }
+    };
+
+    const line = {
+      "type": "Feature",
+      "properties": {
+        "originId": data.origin_id,
+        "destId": data.dest_id
+      },
+      "geometry": {
+        "coordinates": [
+          [originLong, originLat],
+          [destLong, destLat]
+        ],
+        "type": "LineString"
+      }
+    };
+    featureData.push(pointOrigin);
+    featureData.push(pointDest);
+    featureData.push(line);
+  });
+
+  const geoData = {};
+  geoData.type = "FeatureCollection";
+  geoData.features = featureData;
+
   const [hoverInfo, setHoverInfo] = useState(null);
   const lineStyle = {
     type: 'line',
@@ -67,7 +119,7 @@ function MapContainer(props) {
         interactiveLayerIds={['line']}
         onMouseMove={onHover}
       >
-        <Source id="my-data" type="geojson" data={geojson}>
+        <Source id="my-data" type="geojson" data={geoData}>
           <Layer {...lineStyle} />
           <Layer {...circleStyle} />
           <Layer {...symbolStyle} />

@@ -11,6 +11,7 @@ import './../scss/leftpanel.css';
 const base_url = 'http://127.0.0.1:4000';
 function Frame_149(props) {
   const [dataSets, setDataSets] = useState([]);
+  const [columnNames, setColumnNames] = useState([]);
   const colorPalettes = ["#004B80", "#0078CC", "#33ABFF", "#80CAFF", "#333380", "#8080B0"];
   const requiredCols = ['required columns', 'dd'];
   const customizeLines = ['customize line', 'dd'];
@@ -23,8 +24,25 @@ function Frame_149(props) {
   function handleDatasetChange(event) {
     const datasetId = event.target.value;
     axios.get(base_url + "/dataset/" + datasetId).then((res) => {
-      console.log(res.data);
+      setColumnNames(Object.keys(res.data[0]));
+      props.setPointData(res.data);
     });
+  }
+
+  function handleOrginLatChange(event) {
+    props.setOriginLat(event.target.value);
+  }
+
+  function handleOrginLongChange(event) {
+    props.setOriginLong(event.target.value);
+  }
+
+  function handleDestLatChange(event) {
+    props.setDestLat(event.target.value);
+  }
+
+  function handleDestLongChange(event) {
+    props.setDestLong(event.target.value);
   }
 
   const { register, handleSubmit, watch } = useForm();
@@ -51,6 +69,10 @@ function Frame_149(props) {
     <option key={index}>{data}</option>
   );
 
+  const columnNamesItems = columnNames.map((data, index) =>
+    <option key={index}>{data}</option>
+  );
+
   useEffect(() => {
     axios.get(base_url + "/datasets").then((res) => {
       setDataSets(res.data);
@@ -67,6 +89,7 @@ function Frame_149(props) {
         <Form.Group>
           <Form.Label className='fw-bold text-secondary'>Select Dataset</Form.Label>
           <Form.Select {...register("dataset")} onChange={handleDatasetChange}>
+            <option>---</option>
             {dataSetItems}
           </Form.Select>
         </Form.Group>
@@ -86,9 +109,8 @@ function Frame_149(props) {
             Origin Latitude*
           </Form.Label>
           <Col sm="6">
-            <Form.Select {...register("origin-lat", {required: true})}>
-              <option>Origin Latitude</option>
-              <option>Origin Latitude 1</option>
+            <Form.Select {...register("origin-lat", {required: true})} onChange={handleOrginLatChange}>
+              {columnNamesItems}
             </Form.Select>
           </Col>
         </Form.Group>
@@ -97,9 +119,8 @@ function Frame_149(props) {
             Origin Longitude*
           </Form.Label>
           <Col sm="6">
-            <Form.Select {...register("origin-long", {required: true})}>
-              <option>Origin Longitude</option>
-              <option>Origin Longitude 1</option>
+            <Form.Select {...register("origin-long", {required: true})} onChange={handleOrginLongChange}>
+              {columnNamesItems}
             </Form.Select>
           </Col>
         </Form.Group>
@@ -108,9 +129,8 @@ function Frame_149(props) {
             Destination Latitude*
           </Form.Label>
           <Col sm="6">
-            <Form.Select {...register("dest-lat", {required: true})}>
-              <option>Destination Latitude</option>
-              <option>Destination Latitude 1</option>
+            <Form.Select {...register("dest-lat", {required: true})} onChange={handleDestLatChange}>
+              {columnNamesItems}
             </Form.Select>
           </Col>
         </Form.Group>
@@ -119,9 +139,8 @@ function Frame_149(props) {
             Destination Longitude*
           </Form.Label>
           <Col sm="6">
-            <Form.Select {...register("dest-long", {required: true})}>
-              <option>Destination Longitude</option>
-              <option>Destination Longitude 1</option>
+            <Form.Select {...register("dest-long", {required: true})} onChange={handleDestLongChange}>
+              {columnNamesItems}
             </Form.Select>
           </Col>
         </Form.Group>
