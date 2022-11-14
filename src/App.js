@@ -7,15 +7,17 @@ import MapContainer from './components/mapContainer';
 
 function App() {
   const [show, setShow] = useState(false);
-  const [lineWidth, setLineWidth] = useState(2);
+  const [lineWidth, setLineWidthVal] = useState(2);
   const [lineColor, setLineColor] = useState('blue');
-  const [pointColor, setpointColor] = useState('pink');
-  const [pointRadius, setpointRadius] = useState(6);
+  const [pointColor, setPointColor] = useState('pink');
+  const [pointRadius, setPointRadius] = useState(6);
   const [pointData, setPointData] = useState([]);
   const [originLat, setOriginLat] = useState('');
   const [originLong, setOriginLong] = useState('');
   const [destLat, setDestLat] = useState('');
   const [destLong, setDestLong] = useState('');
+  const [pointLabel, setPointLabel] = useState('');
+
   const gridIcon = (
             <div className='fs-14'>
               <Icon.Grid/>
@@ -62,13 +64,16 @@ function App() {
               <Tab tabClassName="dashboard-tab above-tab" eventKey="dashboard" title={gridIcon}>
                 <div className='d-flex'>
                   <Frame149
-                    setLineWidth={setLineWidth}
+                    setLineWidthVal={setLineWidthVal}
                     setLineColor={setLineColor}
+                    setPointColor={setPointColor}
+                    setPointRadius = {setPointRadius}
                     setPointData={setPointData}
                     setOriginLat = {setOriginLat}
                     setOriginLong = {setOriginLong}
                     setDestLat = {setDestLat}
                     setDestLong = {setDestLong}
+                    setPointLabel={setPointLabel}
                   />
                   <div className='flex-grow-1'>
                     <MapContainer
@@ -81,6 +86,7 @@ function App() {
                       originLong={originLong}
                       destLat={destLat}
                       destLong={destLong}
+                      pointLabel={pointLabel}
                     />
                   </div>
                 </div>

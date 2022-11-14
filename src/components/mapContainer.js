@@ -23,10 +23,12 @@ function MapContainer(props) {
     const originLong = data[props.originLong];
     const destLat = data[props.destLat];
     const destLong = data[props.destLong];
+    const pointLabel = data[props.pointLabel];
+
     const pointOrigin = {
       "type": "Feature",
       "properties": {
-        "title": data.origin_name
+        "title": pointLabel
       },
       "geometry": {
         "coordinates": [originLong, originLat],
@@ -36,7 +38,7 @@ function MapContainer(props) {
     const pointDest = {
       "type": "Feature",
       "properties": {
-        "title": data.dest_name
+        "title": pointLabel
       },
       "geometry": {
         "coordinates": [destLong, destLat],

@@ -5,24 +5,28 @@ import './../../scss/common.css';
 function LineWidth(props) {
   const [widthVal, setWidthVal] = useState(0);
 
-  function handleChangeWidth(event) {
+  function handleChangeVal(event) {
     setWidthVal(event.target.value);
-    props.setLineWidthVal(event.target.value);
+    if(props.title === 'Point Radius') {
+      props.setPointRadius(event.target.value);
+    } else {
+      props.setLineWidthVal(event.target.value);
+    }
   }
 
   return (
     <div>
-      <p className="text-uppercase fw-bold mt-3 sub-title">Line Width (Pixels)</p>
+      <p className="text-uppercase fw-bold mt-3 sub-title">{props.title} (Pixels)</p>
         <div className='row'>
           <div className='col-sm-4'>
-            <Form.Control type="number" value={widthVal} onChange={handleChangeWidth} {...props.register} />
+            <Form.Control type="number" value={widthVal} onChange={handleChangeVal} {...props.register} />
           </div>
           <div className='col-sm-8'>
             <Form.Range
               min={0}
               max={10}
               value={widthVal}
-              onChange={handleChangeWidth}
+              onChange={handleChangeVal}
             />
             <div className='d-flex justify-content-between'>
               <span>0</span>

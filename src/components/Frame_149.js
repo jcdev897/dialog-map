@@ -12,6 +12,7 @@ const base_url = 'http://127.0.0.1:4000';
 function Frame_149(props) {
   const [dataSets, setDataSets] = useState([]);
   const [columnNames, setColumnNames] = useState([]);
+  const [showPointLabel, setShowPointLabel] = useState(false);
   const colorPalettes = ["#004B80", "#0078CC", "#33ABFF", "#80CAFF", "#333380", "#8080B0"];
   const requiredCols = ['required columns', 'dd'];
   const customizeLines = ['customize line', 'dd'];
@@ -19,6 +20,10 @@ function Frame_149(props) {
 
   function handleChangeLineColor(color, event) {
     props.setLineColor(color.hex);
+  }
+
+  function handleChangePointColor(color, event) {
+    props.setPointColor(color.hex);
   }
 
   function handleDatasetChange(event) {
@@ -162,9 +167,22 @@ function Frame_149(props) {
           <option>Route ID</option>
           <option>Route ID 1</option>
         </Form.Select>
-        <LineWidth register={register("line-width")} setLineWidthVal={props.setLineWidthVal} />
+        <LineWidth register={register("line-width")} setLineWidthVal={props.setLineWidthVal} title="Line Width" />
         <BorderLeftSelect register={register("point-label")} values={pointLabels}/>
-        <EnableCheckbox register={register('point-label-status')} />
+        <EnableCheckbox register={register('point-label-status')} data={columnNames} setPointLabel={props.setPointLabel} />
+        <p className="text-uppercase fw-bold mt-3 sub-title">Point Color</p>
+        <Form.Select {...register("point-color")}>
+          <option>Color Palette #1</option>
+          <option>Color Palette #2</option>
+        </Form.Select>
+        <GithubPicker
+          className='color-palette pt-2'
+          colors={colorPalettes}
+          triangle='hide'
+          width='300'
+          onChangeComplete={handleChangePointColor}
+        />
+        <LineWidth register={register("point-radius")} setPointRadius={props.setPointRadius} title="Point Radius" />
       </Form>
     </div>
   )
